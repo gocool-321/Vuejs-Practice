@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@3"></script>
+  </head>
+  <body>
+    <header>
+      <h3>2-way Binding and It's alternative v-model</h3>
+    </header>
+    <section id="elements">
+      <h2>Text Element</h2>
+      <input type="text" v-model="textEle" />
+      <p>Here comes text: {{textEle}}</p>
+
+      <h2>CheckBox Element</h2>
+      <input type="checkbox" v-model="checkBoxEle" />
+      <p>Here comes checkbox: {{checkBoxEle}}</p>
+
+      <h2>password Element</h2>
+      <input
+        type="password"
+        v-on:input="handlePassword"
+        v-bind:value="passwordEle"
+      />
+      <p>Here comes checkbox: {{passwordEle}}</p>
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>
