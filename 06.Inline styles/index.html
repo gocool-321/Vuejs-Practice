@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Vue Dynamic Styling</h1>
+    </header>
+    <section id="styling">
+      <div
+        class="demo"
+        @click="toggler(1)"
+        :style="{borderColor: box1?'red':'#ccc',backgroundColor: box1?'#ccc':'skyblue'}"
+      ></div>
+      <div
+        class="demo"
+        @click="toggler(2)"
+        :style="{borderColor: box2?'red':'#ccc',backgroundColor: box2?'#ccc':'skyblue'}"
+      ></div>
+      <div
+        class="demo"
+        @click="toggler(3)"
+        :style="{borderColor: box3?'red':'#ccc',backgroundColor: box3?'#ccc':'skyblue'}"
+      ></div>
+    </section>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
