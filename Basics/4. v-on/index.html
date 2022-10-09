@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div style="margin: 1rem; border: 1px black solid; padding: 1rem">
+        <h1>Count: {{count}}</h1>
+        <button v-on:click="increment()">Increment</button>
+        <button v-on:click="decrement">Decrement</button>
+      </div>
+      <div style="margin: 1rem; border: 1px black solid; padding: 1rem">
+        <input type="text" v-on:input="handleTextChange" />
+        <h2>{{text}}</h2>
+        <h2 v-once>This is v-once Text: {{text}}</h2>
+      </div>
+      <div style="margin: 1rem; border: 1px black solid; padding: 1rem">
+        <input
+          type="text"
+          v-on:input="handleNamedTextChange($event,' Gokul')"
+        />
+        <h2>{{namedText}}</h2>
+      </div>
+      <div style="margin: 1rem; border: 1px black solid; padding: 1rem">
+        <input
+          type="text"
+          v-on:input="handleNamedTextChange($event,' Gokul')"
+          v-on:keyup.enter="handleEnter"
+        />
+        <h2>{{namedText}}</h2>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

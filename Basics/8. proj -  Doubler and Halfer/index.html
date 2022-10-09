@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <button
+          v-for="(item,idx) in vals"
+          @click="handleDouble(idx)"
+          @click.middle="handleHalf(idx)"
+        >
+          {{item}}
+        </button>
+
+        <h4>Left Click to Double & Cursor Click to Half</h4>
+      </ul>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
