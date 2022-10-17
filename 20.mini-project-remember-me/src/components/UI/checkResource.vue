@@ -5,14 +5,20 @@
         <tr>
           <th scope="col">Title</th>
           <th scope="col">description</th>
-          <th scope="col">Link</th>
+          <th scope="col">Links</th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(d,i) in data" :key="i">
           <td>{{d["title"]}}</td>
           <td>{{d["description"]}}</td>
-          <td>{{d["link"]}}</td>
+          <td>
+            <a href="{{d['link']}}">{{d["link"]}}</a>
+          </td>
+          <td>
+            <button @click="handleDelete(i)">Delete</button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -26,7 +32,13 @@ export default {
       data: this.resources
     };
   },
-  inject: ["resources"]
+  inject: ["resources", "delete"],
+  methods: {
+    handleDelete(idx) {
+      // this.$emit("delete", idx);
+      this.delete(idx);
+    }
+  }
 };
 </script>
 

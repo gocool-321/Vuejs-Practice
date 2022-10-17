@@ -22,13 +22,25 @@ export default {
   data() {
     return {
       currentView: "checkResource",
-      resources: []
+      resources: [
+        {
+          description: "Learn to Google",
+          title: "Google",
+          link: "https://google.com"
+        },
+        {
+          description: "Learning Vue",
+          title: "vue",
+          link: "https://vuejs.org"
+        }
+      ]
     };
   },
   provide() {
     return {
       addToResources: this.getResources,
-      resources: this.resources
+      resources: this.resources,
+      delete: this.deleteResource
     };
   },
   methods: {
@@ -38,6 +50,9 @@ export default {
 
     getResources(obj) {
       this.resources.unshift(obj);
+    },
+    deleteResource(idx) {
+      this.resources.splice(idx, 1);
     }
   }
 };
