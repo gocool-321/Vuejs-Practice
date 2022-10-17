@@ -32,12 +32,14 @@ export default {
   created() {
     const currId = this.$route.params.teamId;
     // const members = this.teams.find(t => console.log(t));
-    const members = this.teams.find(t => t.id == currId).members;
+    const teams = this.teams.find(t => t.id == currId);
+    const members = teams.members;
     const all = [];
     for (let i of members) {
       all.push(this.users.find(u => u.id === i));
     }
     this.members = all;
+    this.teamName = teams.name;
   }
 };
 </script>
