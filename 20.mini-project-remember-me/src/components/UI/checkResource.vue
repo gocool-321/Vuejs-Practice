@@ -14,7 +14,7 @@
           <td>{{d["title"]}}</td>
           <td>{{d["description"]}}</td>
           <td>
-            <a href="{{d['link']}}">{{d["link"]}}</a>
+            <a :href="d['link']" target="_blank">{{d["title"]}}</a>
           </td>
           <td>
             <button @click="handleDelete(i)">Delete</button>
