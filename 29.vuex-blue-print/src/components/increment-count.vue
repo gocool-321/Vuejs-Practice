@@ -8,7 +8,7 @@
 export default {
   methods: {
     add1() {
-      this.$store.state.count++;
+      this.$store.dispatch("increment");
     }
   }
 };

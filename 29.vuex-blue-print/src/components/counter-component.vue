@@ -1,11 +1,17 @@
 <template>
   <div>
-    <h1>Count: {{ this.$store.state.count}}</h1>
+    <h1>Count: {{ count}}</h1>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    count() {
+      return this.$store.getters.counter;
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

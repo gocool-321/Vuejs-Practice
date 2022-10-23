@@ -1,15 +1,24 @@
 <template>
   <div>
-    <counter></counter>
-    <increment></increment>
+    <authenticate></authenticate>
+    <div v-if="isLoggedIn">
+      <counter></counter>
+      <increment></increment>
+    </div>
   </div>
 </template>
 
 <script>
 import counter from "./counter-component.vue";
+import authenticate from "./authenticate-user.vue";
 import increment from "./increment-count.vue";
 export default {
-  components: { counter, increment }
+  components: { counter, increment, authenticate },
+  computed: {
+    isLoggedIn() {
+      return this.$store.getters.AuthStatus;
+    }
+  }
 };
 </script>
 
