@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <ul>
-      <user-item v-for="user in users" :key="user.id" :name="user.fullName" :role="user.role"></user-item>
-    </ul>
-  </div>
+  <ul>
+    <user-item v-for="user in users" :key="user.id" :name="user.fullName" :role="user.role"></user-item>
+  </ul>
 </template>
 
 <script>
@@ -11,9 +9,9 @@ import UserItem from './UserItem.vue';
 
 export default {
   components: {
-    UserItem
+    UserItem,
   },
-  inject: ['users']
+  inject: ['users'],
 };
 </script>
 
